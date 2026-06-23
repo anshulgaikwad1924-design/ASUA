@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Admission | Arena sports universe acdemy ASUA</title>
+  <meta name="description"
+    content="Admission and affiliation form for Arena sports universe acdemy ASUA.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Specific styles for the admission form to keep it clean */
+    .admission-form-wrap {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin-top: 2rem;
+      border: 1px solid #e5e5e5;
+      border-top: 5px solid var(--primary);
+    }
+    .admission-section {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .admission-section:last-child {
+      border-bottom: none;
+    }
+    .admission-section h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-heading);
+    }
+    .checkbox-group {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-top: 0.3rem;
+      cursor: pointer;
+    }
+    .checkbox-group label {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .file-upload-group {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-light);
+    }
+    .file-upload-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .file-upload-group input[type="file"] {
+      width: 100%;
+    }
+    .office-use {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" style="position: absolute; background: rgba(0, 0, 0, 0.4); width: 100%; box-shadow: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="ASUA Logo" class="logo-img" >
+        Arena sports universe acdemy <span class="brand-accent">ASUA</span>
+      </a>
+      <button type="button" class="nav-toggle"  aria-expanded="false">&#9776;</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="instructors.html">Instructors</a></li>
+        <li><a href="admission.html" class="active">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('images/admission_bg.jpg') center/cover; padding: 8rem 0;">
+      <h1 style="color: #ffffff; font-size: 2.8rem; font-style: italic; font-weight: 900; letter-spacing: 1px; line-height: 1.2;">"A black belt is a white belt<br>who never quit."</h1>
+      <p style="color: #cccccc; font-size: 1.2rem; font-weight: 600; margin-top: 1rem; text-transform: uppercase; letter-spacing: 2px;">Begin Your Journey Today</p>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+           <h2 class="section-title" style="margin-bottom: 1rem;">New Admission <span class="accent-bar"></span></h2>
+           <p class="section-subtitle" style="margin-bottom: 0;">Join the academy. Fill out our admission and affiliation form below.</p>
+        </div>
+        <!-- FormSubmit Integration (Completely Free, supports files) -->
+        <form class="admission-form-wrap" action="https://formsubmit.co/arenasportsuniverseacademymart@gmail.com" method="POST" enctype="multipart/form-data">
+          <!-- Optional: Next line redirects user back to home page after submission instead of showing a generic thank you page -->
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+          
+          <div class="admission-section">
+            <h3>Personal Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Name (In Capital Letters) <span class="req">*</span></label>
+                <input class="form-control uppercase" type="text" id="fullName" name="fullName" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="address">Address <span class="req">*</span></label>
+                <input class="form-control" type="text" id="address" name="address" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactNo">Contact No <span class="req">*</span></label>
+                <input class="form-control" type="tel" id="contactNo" name="contactNo" required>
+              </div>
+              <div class="form-group">
+                <label for="whatsappNo">WhatsApp No</label>
+                <input class="form-control" type="tel" id="whatsappNo" name="whatsappNo">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dob">Date of Birth <span class="req">*</span></label>
+                <input class="form-control" type="date" id="dob" name="dob" required>
+              </div>
+              <div class="form-group">
+                <label for="bloodGroup">Blood Group</label>
+                <input class="form-control" type="text" id="bloodGroup" name="bloodGroup" placeholder="e.g. O+, A-">
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender <span class="req">*</span></label>
+                <select class="form-control" id="gender" name="gender" required>
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <input class="form-control" type="text" id="occupation" name="occupation">
+              </div>
+              <div class="form-group">
+                <label for="education">Educational Qualification</label>
+                <input class="form-control" type="text" id="education" name="education">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input class="form-control" type="number" id="weight" name="weight">
+              </div>
+              <div class="form-group">
+                <label for="pinCode">Pin Code <span class="req">*</span></label>
+                <input class="form-control" type="text" id="pinCode" name="pinCode" required>
+              </div>
+              <div class="form-group">
+                <label for="otherGame">Other Game</label>
+                <input class="form-control" type="text" id="otherGame" name="otherGame">
+              </div>
+            </div>
+
+            <div class="file-upload-group">
+              <label for="applicantPhoto">Applicant Passport Size Photo <span class="req">*</span></label>
+              <input type="file" id="applicantPhoto" name="applicantPhoto" accept=".png, .jpg, .jpeg, .pdf" required>
+              <small class="help-text">Upload image or PDF</small>
+            </div>
+          </div>
+
+          <div class="admission-section">
+            <h3>Karate Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dateOfAdmission">Date of Admission <span class="req">*</span></label>
+                <input class="form-control" type="date" id="dateOfAdmission" name="dateOfAdmission" required>
+              </div>
+              <div class="form-group">
+                <label for="karateBranch">Karate Branch <span class="req">*</span></label>
+                <input class="form-control" type="text" id="karateBranch" name="karateBranch" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="instructorName">Name of Instructor (For Affiliation)</label>
+                <input class="form-control" type="text" id="instructorName" name="instructorName">
+              </div>
+              <div class="form-group">
+                <label for="style">Style</label>
+                <input class="form-control" type="text" id="style" name="style" value="Goju-Ryu">
+              </div>
+              <div class="form-group">
+                <label for="instructorContact">Instructor Contact No</label>
+                <input class="form-control" type="tel" id="instructorContact" name="instructorContact">
+              </div>
+            </div>
+          </div>
+
+          <div class="admission-section">
+            <h3>Declaration</h3>
+            <div class="checkbox-group">
+              <input type="checkbox" id="decl1" name="decl1" required>
+              <label for="decl1">1. Before taking admission in the club, it will be mandatory for you to submit the health certificate to your instructor.</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="decl2" name="decl2" required>
+              <label for="decl2">2. I undersigned hereby declare that the above information is true to the best of my knowledge &amp; belief &amp; the Association has right to cancel the membership in case of submission of wrong information.</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="decl3" name="decl3" required>
+              <label for="decl3">3. If any injury occurs during the training period, I shall be responsible for that.</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="decl4" name="decl4" required>
+              <label for="decl4">4. I also declare to abide by the rules and regulations of the association.</label>
+            </div>
+
+            <div class="file-upload-group">
+              <label for="applicantSignature">Applicant's Signature Upload (PNG/PDF) <span class="req">*</span></label>
+              <input type="file" id="applicantSignature" name="applicantSignature" accept=".png, .pdf" required>
+            </div>
+          </div>
+
+          <div class="admission-section">
+            <h3>In Case of Minor (Below 18 Years)</h3>
+            <p class="help-text mb-4">If the applicant is under 18, a parent or guardian must complete this section.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guardianName">Name of Father / Mother / Guardian</label>
+                <input class="form-control" type="text" id="guardianName" name="guardianName">
+              </div>
+              <div class="form-group">
+                <label for="minorName">Name of Minor Applicant</label>
+                <input class="form-control" type="text" id="minorName" name="minorName">
+              </div>
+            </div>
+
+            <div class="checkbox-group mt-2">
+              <input type="checkbox" id="minorConsent" name="minorConsent">
+              <label for="minorConsent">I permit my son/daughter for the Martial Arts Training &amp; I assure you that he / she is not suffering from any major diseases. If any major injury occurs during the training period, I shall be responsible for that.</label>
+            </div>
+
+            <div class="form-row mt-4">
+              <div class="form-group">
+                <label for="guardianContact">Guardian Contact No.</label>
+                <input class="form-control" type="tel" id="guardianContact" name="guardianContact">
+              </div>
+            </div>
+
+            <div class="file-upload-group">
+              <label for="guardianSignature">Guardian's Signature Upload (PNG/PDF)</label>
+              <input type="file" id="guardianSignature" name="guardianSignature" accept=".png, .pdf">
+            </div>
+          </div>
+
+          <div class="form-submit mt-8">
+            <button type="submit" class="btn btn-primary btn-large">Submit Admission Form</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo mb-2">
+            <img src="images/logo.png" alt="ASUA Logo" class="logo-img" >
+            Arena sports universe acdemy <span class="brand-accent">ASUA</span>
+          </div>
+          <p class="footer-tagline">Building discipline, confidence, and champions — one strike at a time. Affiliated
+            with GKSF.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 sujog nagar garden ,nagpur - 440027 ,maharastra ,india</li>
+            <li>📞 +91&#8209;9168679994</li>
+            <li>✉ arenasportsuniverseacademymart@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span data-year>2026</span> Arena sports universe acdemy ASUA. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
