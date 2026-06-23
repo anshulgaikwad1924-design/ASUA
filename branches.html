@@ -53,39 +53,53 @@
         <h2 class="section-title">ASUA Locations <span class="accent-bar"></span></h2>
         <p class="section-subtitle">Join us at any of our branches. More locations coming soon!</p>
 
-        <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+        <div class="branches-container" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0 auto;">
           <!-- Branch 1: Nagpur -->
-          <div class="contact-info-card" style="margin-bottom: 2rem;">
-            <h3 style="margin-bottom: 1rem; color: var(--primary);">📍 Nagpur Branch (Head Office)</h3>
+          <div class="branch-card" style="display: flex; flex-wrap: wrap; background: #fff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden;">
             
-            <div class="info-item">
-              <span class="info-icon">📍</span>
-              <div>
-                <strong>Address</strong><br>
-                suyog nagar garden, nagpur - 440027, maharastra, india <br>
+            <!-- Left: Branch Details & Instructor -->
+            <div class="branch-details" style="flex: 1 1 350px; padding: 2.5rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.5rem;">📍 Nagpur Branch (Head Office)</h3>
+              
+              <!-- Instructor Info -->
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee;">
+                <img src="images/shubham_bansod.jpg" alt="Sensei Shubham Vinayak Bansod" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent);">
+                <div>
+                  <p style="font-weight: bold; color: var(--text-dark); margin: 0;">Sensei Shubham Vinayak Bansod</p>
+                  <p style="font-size: 0.9rem; color: #666; margin: 0;">Chief Instructor</p>
+                </div>
+              </div>
+
+              <div class="info-item" style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                <span class="info-icon" style="color: var(--primary);">📍</span>
+                <div>
+                  <strong>Address</strong><br>
+                  suyog nagar garden, nagpur - 440027, maharastra, india
+                </div>
+              </div>
+
+              <div class="info-item" style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                <span class="info-icon" style="color: var(--primary);">📞</span>
+                <div>
+                  <strong>Phone</strong><br>
+                  <a href="tel:+919168679994" style="color: var(--text-dark); text-decoration: none;">+91&#8209;9168679994</a>
+                </div>
+              </div>
+
+              <div class="info-item" style="display: flex; gap: 1rem;">
+                <span class="info-icon" style="color: var(--primary);">✉</span>
+                <div>
+                  <strong>Email</strong><br>
+                  <a href="mailto:arenasportsuniverseacademymart@gmail.com" style="color: var(--primary); text-decoration: none; word-break: break-all;">arenasportsuniverseacademymart@gmail.com</a>
+                </div>
               </div>
             </div>
 
-            <div class="info-item">
-              <span class="info-icon">📞</span>
-              <div>
-                <strong>Phone</strong><br>
-                <a href="tel:+919168679994">+91&#8209;9168679994</a>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <span class="info-icon">✉</span>
-              <div>
-                <strong>Email</strong><br>
-                <a href="mailto:arenasportsuniverseacademymart@gmail.com">arenasportsuniverseacademymart@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="map-wrap" style="margin-top: 1.5rem;">
+            <!-- Right: Small Map -->
+            <div class="branch-map" style="flex: 1 1 300px; min-height: 250px;">
               <iframe title="Arena sports universe academy ASUA location — Nagpur, Maharashtra"
                   src="https://www.google.com/maps?q=suyog+nagar+garden+nagpur+440027+maharastra+india&output=embed"
-                  width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy">
+                  width="100%" height="100%" style="border:0; min-height: 250px;" allowfullscreen loading="lazy">
               </iframe>
             </div>
           </div>
