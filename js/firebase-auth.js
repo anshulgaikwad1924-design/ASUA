@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDGg5tBjc1VI267YWj6xfGoW_pmmjk2t6M",
@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -29,6 +30,26 @@ onAuthStateChanged(auth, (user) => {
             window.location.href = 'login.html';
         }
     }
+});
+
+// Google Sign-In Handling
+const googleBtns = document.querySelectorAll('.google-login-btn');
+googleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const errorMsg = document.getElementById('error-msg');
+        if(errorMsg) errorMsg.style.display = "none";
+        
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                // Success redirect handled by onAuthStateChanged
+            })
+            .catch((error) => {
+                if(errorMsg) {
+                    errorMsg.textContent = error.message;
+                    errorMsg.style.display = "block";
+                }
+            });
+    });
 });
 
 // Login Form Handling
