@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDGg5tBjc1VI267YWj6xfGoW_pmmjk2t6M",
@@ -13,6 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -40,7 +42,21 @@ googleBtns.forEach(btn => {
         if(errorMsg) errorMsg.style.display = "none";
         
         signInWithPopup(auth, googleProvider)
-            .then((result) => {
+            .then(async (result) => {
+                // Check if user exists in Firestore
+                const userRef = doc(db, "users", result.user.uid);
+                const docSnap = await getDoc(userRef);
+                if (!docSnap.exists()) {
+                    // Create new user profile for Google Sign-In
+                    await setDoc(userRef, {
+                        name: result.user.displayName || "Google User",
+                        email: result.user.email,
+                        role: "student",
+                        belt: "White Belt",
+                        batch: "Unassigned",
+                        attendance: 0
+                    });
+                }
                 // Success redirect handled by onAuthStateChanged
             })
             .catch((error) => {
@@ -78,13 +94,24 @@ const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        const nameInput = document.getElementById('name');
+        const name = nameInput ? nameInput.value : "Student";
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const errorMsg = document.getElementById('error-msg');
         errorMsg.style.display = "none";
         
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
+                // Save user profile to Firestore
+                await setDoc(doc(db, "users", userCredential.user.uid), {
+                    name: name,
+                    email: email,
+                    role: "student",
+                    belt: "White Belt",
+                    batch: "Unassigned",
+                    attendance: 0
+                });
                 // Success redirect is handled by onAuthStateChanged
             })
             .catch((error) => {
@@ -107,3 +134,5 @@ if (logoutBtn) {
         });
     });
 }
+
+export { auth, db };

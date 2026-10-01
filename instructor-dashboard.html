@@ -39,35 +39,28 @@
     </div>
   </header>
 
-    <main>
-    <section class="section section-light" style="min-height: 80vh; display: flex; align-items: center; background: url('images/contact_bg.jpg') center center/cover;">
+      <main>
+    <section class="section section-light" style="min-height: 80vh; display: flex; align-items: flex-start; background: url('images/contact_bg.jpg') center center/cover;">
       <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6);"></div>
-      <div class="container" style="max-width: 600px; width: 100%; text-align: center; position: relative; z-index: 1;">
-        <div class="form-wrap" style="padding: 3rem; background: rgba(255,255,255,0.95);">
-          <h2 class="section-title">Dashboard <span class="accent-bar" style="margin: 0.5rem auto 1.5rem;"></span></h2>
-          <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-dark); font-weight: bold;">Welcome to the Arena Sports Universe Academy Portal!</p>
+      <div class="container" style="width: 100%; text-align: center; position: relative; z-index: 1; padding-top: 8rem;">
+        <div class="form-wrap" style="padding: 3rem; background: rgba(255,255,255,0.95); max-width: 900px; margin: 0 auto;">
+          <h2 class="section-title">Instructor Dashboard <span class="accent-bar" style="margin: 0.5rem auto 1.5rem;"></span></h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-dark); font-weight: bold;">Manage Students & Attendance</p>
           
-          <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; border: 1px solid #ddd; text-align: left; margin-bottom: 2rem;">
-            <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Student Profile</h3>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-              <div>
-                <strong>Name:</strong> <span id="profile-name">Loading...</span>
-              </div>
-              <div>
-                <strong>Belt Level:</strong> <span id="profile-belt" style="color: var(--accent); font-weight: bold;">Loading...</span>
-              </div>
-              <div>
-                <strong>Batch:</strong> <span id="profile-batch">Loading...</span>
-              </div>
-              <div>
-                <strong>Attendance:</strong> <span id="profile-attendance">Loading...</span>
-              </div>
-            </div>
-            
-            <div style="margin-top: 2rem;">
-              <strong>Fee Status:</strong> <span style="color: green; font-weight: bold;">Paid (Current Month)</span>
-            </div>
+          <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; border: 1px solid #ddd; text-align: left; margin-bottom: 2rem; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--primary);">
+                  <th style="padding: 10px; text-align: left;">Name</th>
+                  <th style="padding: 10px; text-align: left;">Belt</th>
+                  <th style="padding: 10px; text-align: left;">Total Attendance</th>
+                  <th style="padding: 10px; text-align: center;">Mark Today</th>
+                </tr>
+              </thead>
+              <tbody id="student-list">
+                <tr><td colspan="4" style="text-align: center; padding: 1rem;">Loading students...</td></tr>
+              </tbody>
+            </table>
           </div>
           
           <button id="logout-btn" class="btn btn-primary" style="background: #333; margin-top: 1rem;">Logout</button>
@@ -119,10 +112,11 @@
   </footer>
 
   <script src="js/main.js"></script>
-<script type="module" src="js/student-dashboard.js"></script>
+<script type="module" src="js/instructor-dashboard.js"></script>
 </body>
 
 </html>
+
 
 
 
